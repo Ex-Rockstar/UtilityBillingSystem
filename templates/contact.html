@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block title %}Contact{% endblock title %}
+{% block body %}
+<div class="container-fluid px-0 mb-3">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/static/img/phone1.jfif" class="d-block w-100" alt="...">
+            </div>
+        </div>
+    </div>
+</div>
+<h1 class="text-center">CONTACT US</h1>
+<form method="post" action="/contact">
+    {% csrf_token %}
+<div class="container py-4">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Your name here">
+            <label for="name">Your Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="Email" name="email" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="number" class="form-control" id="Phone" name="phoneno" placeholder="Must be 10 digit">
+            <label for="floatingInput">Phone number</label>
+        </div>
+        <div class="form-floating mb-3">
+            <textarea class="form-control" name="query" placeholder="Ask anything" id="query" style="height: 100px"></textarea>
+            <label for="floatingTextarea2">Queries</label>
+        </div>
+        <button class="btn btn-primary" type="submit">submit</button>
+</div>
+</form>
+{% endblock body %}
